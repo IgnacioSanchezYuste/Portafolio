@@ -72,7 +72,7 @@ const OtherData = () => {
           </h3>
           <div className="rounded-xl overflow-hidden shadow-2xl">
             <img 
-              src="img/proyecto.jpg"
+              src="/img/proyecto.jpg"
               alt="Concurso de Automatización UCLM 2023 - Proyecto ganador"
               className="w-fill h-50 object-cover"
             />

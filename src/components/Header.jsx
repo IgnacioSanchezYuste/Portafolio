@@ -21,7 +21,7 @@ const Header = () => {
           >
             <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-gradient-to-r from-purple-400 to-indigo-400 shadow-2xl">
               <img 
-                src="img/yo.jpg"
+                src="/img/yo.jpg"
                 alt="Ignacio Sánchez Yuste - Desarrollador de aplicaciones multiplataforma"
                 className="w-full h-full object-cover"
               />
