@@ -25,8 +25,8 @@ const Header = () => {
                 alt="Ignacio Sánchez Yuste - Desarrollador de aplicaciones multiplataforma"
                 className="w-full h-full object-cover"
               />
-            </div>
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full blur opacity-30 animate-pulse"></div>
+            </div>  
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full blur opacity-30 animate-pulse -z-10"></div>
           </motion.div>
 
           {/* Header Info */}
