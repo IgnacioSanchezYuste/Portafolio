@@ -17,7 +17,8 @@ const Languages = () => {
         </div>
         <h2 className="text-3xl font-bold text-white">Idiomas</h2>
       </div>
-      
+
+      <a target='_blank' href="https://certificates.trinitycollege.com/e7b381f2-96c7-48c7-a6a5-2134ae454d95?key=492b318abeecc88efb07e568965547a0973673b164ac94a4271b0d3e17fd5142">
       <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 m-2">
         <div className="flex items-center justify-between">
           <span className="text-xl font-semibold text-white">Inglés</span>
@@ -25,7 +26,7 @@ const Languages = () => {
             Nivel B2 (Trinity)
           </span>
         </div>
-      </div>
+      </div></a>
       <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 m-2">
         <div className="flex items-center justify-between">
           <span className="text-xl font-semibold text-white">Español</span>
