@@ -78,14 +78,14 @@ const Header = () => {
               transition={{ delay: 0.7, duration: 0.6 }}
               className="flex justify-center lg:justify-start gap-4 mt-4"
             >
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+              <a href="https://x.com/IgnacioSanchezY"><div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
                 <Twitter className="w-4 h-4" />
-                <span>@nachonsen06</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <span>@IgnacioSanchezY</span>
+              </div></a>
+              <a href="https://github.com/IgnacioSanchezYuste"><div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
                 <Github className="w-4 h-4" />
                 <span>Portfolio/GitHub</span>
-              </div>
+              </div></a>
             </motion.div>
           </div>
         </div>
