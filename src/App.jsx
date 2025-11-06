@@ -12,12 +12,14 @@ import OtherData from './components/OtherData';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { Toaster } from './components/ui/toaster';
+import ChatWidgetWrapper from './components/ChatWidget';
 
 
 function App() {
   return (
     
     <>
+    
       <Helmet>
         <title>Ignacio Sánchez Yuste - Desarrollador DAM</title>
         <meta name="description" content="Portfolio digital de Ignacio Sánchez Yuste, desarrollador de aplicaciones multiplataforma en formación. Especializado en Java, Kotlin, C# y desarrollo móvil." />
@@ -54,6 +56,7 @@ function App() {
         </div>
         <Footer />
         <Toaster />
+        <ChatWidgetWrapper />
       </div>
     </>
   );
