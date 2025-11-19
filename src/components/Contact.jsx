@@ -12,6 +12,7 @@ const Contact = () => {
       title: "¡Contacto disponible!",
       description: `El ${method} se ha copiado al portapapeles.`,
       duration: 5000,
+      postion: 'top-right',
     });
   };
     function copiarTexto(id) {
