@@ -19,7 +19,7 @@ const Footer = () => {
     >
       <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p className="text-purple-300 text-sm">
-          © {new Date().getFullYear()} Ignacio Sánchez Yuste. Todos los derechos reservados.
+          © {new Date().getFullYear()} Ignacio Sánchez Yuste. Todos los derechos reservados. (El asistente virtual no está disponible temporalmente)
         </p>
         <Button
           onClick={handleSourceCodeClick}
