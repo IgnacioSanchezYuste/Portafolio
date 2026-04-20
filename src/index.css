@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +18,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Custom scrollbar */
@@ -79,4 +78,69 @@ html {
   background: linear-gradient(135deg, #7c3aed, #2563eb);
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+}
+
+/* === Entrance animations (Header — play on mount) === */
+@keyframes ani-slide-down {
+  from { opacity: 0; transform: translateY(-40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ani-slide-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes ani-slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ani-scale-in {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes ani-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.anim-slide-down { animation: ani-slide-down 0.8s ease-out both; }
+.anim-slide-left { animation: ani-slide-left 0.6s ease-out both; }
+.anim-slide-up   { animation: ani-slide-up   0.6s ease-out both; }
+.anim-scale-in   { animation: ani-scale-in   0.6s ease-out both; }
+.anim-fade-in    { animation: ani-fade-in    0.8s ease-out both; }
+
+.anim-delay-300 { animation-delay: 300ms; }
+.anim-delay-400 { animation-delay: 400ms; }
+.anim-delay-500 { animation-delay: 500ms; }
+.anim-delay-600 { animation-delay: 600ms; }
+.anim-delay-700 { animation-delay: 700ms; }
+
+/* === View-triggered animations (sections — triggered by IntersectionObserver) === */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
 }

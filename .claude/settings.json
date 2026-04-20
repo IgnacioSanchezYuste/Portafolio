@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(file /c/Users/nacho/Documents/Webs/Portafolio/public/img/*)",
+      "Bash(identify -verbose /c/Users/nacho/Documents/Webs/Portafolio/public/img/*)",
+      "Bash(npm uninstall *)"
+    ]
+  }
+}
