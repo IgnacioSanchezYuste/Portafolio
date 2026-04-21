@@ -1,23 +1,26 @@
 import React from 'react';
 import { Code, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
+import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
-  const githubUrl = "https://github.com/IgnacioSanchezYuste";
+  const { t } = useLanguage();
+  const githubUrl = 'https://github.com/IgnacioSanchezYuste';
 
   return (
-    <footer className="bg-slate-900/50 backdrop-blur-sm border-t border-white/10 py-6 mt-16">
-      <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p className="text-purple-300 text-sm">
-          © {new Date().getFullYear()} Ignacio Sánchez Yuste. Todos los derechos reservados. (El asistente virtual no está disponible temporalmente)
+    <footer className="relative border-t border-white/10 py-8 mt-16 backdrop-blur-sm bg-slate-950/40">
+      <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4 max-w-6xl">
+        <p className="text-purple-300/80 text-sm text-center sm:text-left">
+          © {new Date().getFullYear()} Ignacio Sánchez Yuste. {t.footer.rights}.
+          <span className="block sm:inline sm:ml-1 text-purple-300/50 text-xs">({t.footer.botNote})</span>
         </p>
         <Button
           onClick={() => window.open(githubUrl, '_blank', 'noopener,noreferrer')}
           variant="outline"
-          className="bg-transparent border-purple-400 text-purple-300 hover:bg-purple-400/20 hover:text-white transition-colors duration-300"
+          className="bg-transparent border-purple-400/50 text-purple-200 hover:bg-purple-400/10 hover:text-white hover:border-purple-300 transition-colors"
         >
           <Code className="w-4 h-4 mr-2" />
-          Ver Código en GitHub
+          {t.footer.github}
           <ExternalLink className="w-4 h-4 ml-2" />
         </Button>
       </div>
