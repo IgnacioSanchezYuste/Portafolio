@@ -56,7 +56,7 @@ export const translations = {
       upcoming: 'Próximamente',
       items: [
         {
-          title: 'Prácticas FP (300h)',
+          title: 'Prácticas FP (400h)',
           company: 'M2M Aplicaciones',
           period: 'Mar 2026 – May 2026',
           tasks: [
@@ -82,8 +82,9 @@ export const translations = {
     skills: {
       title: 'Competencias Técnicas',
       categories: [
-        { title: 'Lenguajes', skills: ['Java', 'Kotlin', 'C#', 'JavaScript', 'SQL', 'XML', 'JSON', 'XSL'] },
-        { title: 'Entornos', skills: ['Android Studio', 'Visual Studio', 'Eclipse'] },
+        { title: 'Lenguajes', skills: ['Java', 'Kotlin', 'C#', 'Python', 'JavaScript', 'TypeScript', 'HTML5', 'CSS', 'SQL', 'XML', 'JSON', 'XSL'] },
+        { title: 'Frameworks', skills: ['.NET', 'React', 'React Native'] },
+        { title: 'Entornos', skills: ['Android Studio', 'Visual Studio', 'VS Code', 'Eclipse'] },
         { title: 'Bases de datos', skills: ['MySQL', 'PostgreSQL', 'Relacionales'] },
         { title: 'Sistemas', skills: ['Windows', 'Linux (Ubuntu, Kali)', 'Hardware y software'] },
       ],
@@ -101,6 +102,16 @@ export const translations = {
           title: 'BowLeague',
           description: 'Aplicación móvil (adaptada a web) para administrar ligas de bolos. Organiza, gestiona y sigue el progreso de ligas y torneos con estadísticas en tiempo real.',
           tags: ['Administración', 'Bolos', 'Ligas'],
+        },
+        {
+          title: 'BarCodeScanner',
+          description: 'Aplicación en React Native para escanear cualquier código de barras en tiempo real, con lectura rápida y precisa desde la cámara del dispositivo.',
+          tags: ['React Native', 'Escáner', 'Móvil'],
+        },
+        {
+          title: 'ChistesJPA',
+          description: 'Aplicación en Kotlin con Jetpack Compose que consume una API propia alojada en un servidor para mostrar una base de datos de chistes.',
+          tags: ['Kotlin', 'Jetpack Compose', 'API REST'],
         },
       ],
     },
@@ -203,7 +214,7 @@ export const translations = {
       upcoming: 'Upcoming',
       items: [
         {
-          title: 'Internship (300h)',
+          title: 'Internship (400h)',
           company: 'M2M Aplicaciones',
           period: 'Mar 2026 – May 2026',
           tasks: [
@@ -229,8 +240,9 @@ export const translations = {
     skills: {
       title: 'Technical Skills',
       categories: [
-        { title: 'Languages', skills: ['Java', 'Kotlin', 'C#', 'JavaScript', 'SQL', 'XML', 'JSON', 'XSL'] },
-        { title: 'Environments', skills: ['Android Studio', 'Visual Studio', 'Eclipse'] },
+        { title: 'Languages', skills: ['Java', 'Kotlin', 'C#', 'Python', 'JavaScript', 'TypeScript', 'HTML5', 'CSS', 'SQL', 'XML', 'JSON', 'XSL'] },
+        { title: 'Frameworks', skills: ['.NET', 'React', 'React Native'] },
+        { title: 'Environments', skills: ['Android Studio', 'Visual Studio', 'VS Code', 'Eclipse'] },
         { title: 'Databases', skills: ['MySQL', 'PostgreSQL', 'Relational DBs'] },
         { title: 'Systems', skills: ['Windows', 'Linux (Ubuntu, Kali)', 'Hardware & Software'] },
       ],
@@ -248,6 +260,16 @@ export const translations = {
           title: 'BowLeague',
           description: 'Mobile app (adapted for web) to manage bowling leagues. Organize, manage and track league and tournament progress with real-time statistics.',
           tags: ['Management', 'Bowling', 'Leagues'],
+        },
+        {
+          title: 'BarCodeScanner',
+          description: 'React Native app to scan any barcode in real time, providing fast and accurate readings using the device camera.',
+          tags: ['React Native', 'Scanner', 'Mobile'],
+        },
+        {
+          title: 'ChistesJPA',
+          description: 'Kotlin application built with Jetpack Compose that consumes a custom API hosted on a server to display a jokes database.',
+          tags: ['Kotlin', 'Jetpack Compose', 'REST API'],
         },
       ],
     },

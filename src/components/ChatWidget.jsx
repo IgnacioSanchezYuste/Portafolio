@@ -4,6 +4,9 @@ export default function ChatWidget() {
   useEffect(() => {
     if (window.__n8nChatLoaded) return;
 
+    const endpoint = import.meta.env.VITE_N8N_CHAT_ENDPOINT;
+    if (!endpoint) return;
+
     const loadChat = async () => {
       window.__n8nChatLoaded = true;
       try {
@@ -17,13 +20,13 @@ export default function ChatWidget() {
         );
 
         createChat({
-          webhookUrl: import.meta.env.VITE_N8N_CHAT_ENDPOINT,
+          webhookUrl: endpoint,
           webhookConfig: { method: "POST", headers: {} },
           target: "#n8n-chat",
           mode: "window",
           chatInputKey: "chatInput",
           chatSessionKey: "sessionId",
-          loadPreviousSession: true,
+          loadPreviousSession: false,
           metadata: {},
           showWelcomeScreen: false,
           defaultLanguage: "en",
@@ -43,8 +46,8 @@ export default function ChatWidget() {
           avatar: "/img/ChatGPT Image 6 nov 2025, 17_42_35.png",
           enableStreaming: true,
         });
-      } catch (error) {
-        console.error("Error cargando el chat de n8n:", error);
+      } catch {
+        window.__n8nChatLoaded = false;
       }
     };
 

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import About from './components/About';
@@ -22,25 +21,28 @@ import { useLanguage } from './context/LanguageContext';
 function App() {
   const { lang } = useLanguage();
 
+  useEffect(() => {
+    document.title =
+      lang === 'es'
+        ? 'Ignacio Sánchez Yuste — Desarrollador DAM'
+        : 'Ignacio Sánchez Yuste — DAM Developer';
+
+    const description =
+      lang === 'es'
+        ? 'Portfolio digital de Ignacio Sánchez Yuste, desarrollador de aplicaciones multiplataforma en formación. Especializado en Java, Kotlin, C# y desarrollo móvil.'
+        : 'Digital portfolio of Ignacio Sánchez Yuste, multi-platform application developer in training. Specialized in Java, Kotlin, C# and mobile development.';
+
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.content = description;
+  }, [lang]);
+
   return (
     <>
-      <Helmet>
-        <html lang={lang} />
-        <title>
-          {lang === 'es'
-            ? 'Ignacio Sánchez Yuste — Desarrollador DAM'
-            : 'Ignacio Sánchez Yuste — DAM Developer'}
-        </title>
-        <meta
-          name="description"
-          content={
-            lang === 'es'
-              ? 'Portfolio digital de Ignacio Sánchez Yuste, desarrollador de aplicaciones multiplataforma en formación. Especializado en Java, Kotlin, C# y desarrollo móvil.'
-              : 'Digital portfolio of Ignacio Sánchez Yuste, multi-platform application developer in training. Specialized in Java, Kotlin, C# and mobile development.'
-          }
-        />
-      </Helmet>
-
       <AuroraBackground />
       <ScrollProgress />
       <Navbar />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rocket, ExternalLink, Gamepad2, Trophy } from 'lucide-react';
+import { Rocket, ExternalLink, Gamepad2, Trophy, ScanLine, Laugh } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 import { useTilt } from '../hooks/useTilt';
 import { useLanguage } from '../context/LanguageContext';
@@ -14,6 +14,16 @@ const projectsMeta = [
     url: 'https://ignaciosanchezyuste.es/BowLeague/',
     icon: Trophy,
     gradient: 'from-amber-500 to-orange-500',
+  },
+  {
+    url: 'https://github.com/IgnacioSanchezYuste/BarCodesScaner',
+    icon: ScanLine,
+    gradient: 'from-cyan-500 to-blue-500',
+  },
+  {
+    url: 'https://github.com/IgnacioSanchezYuste/ChistesJPA',
+    icon: Laugh,
+    gradient: 'from-pink-500 to-rose-500',
   },
 ];
 
