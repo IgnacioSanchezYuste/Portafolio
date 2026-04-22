@@ -113,6 +113,16 @@ export const translations = {
           description: 'Aplicación en Kotlin con Jetpack Compose que consume una API propia alojada en un servidor para mostrar una base de datos de chistes.',
           tags: ['Kotlin', 'Jetpack Compose', 'API REST'],
         },
+        {
+          title: 'Spreadsheet-vue',
+          description: 'Aplicación de hojas de cálculo moderna para navegador, centrada en evaluación determinista de fórmulas, recálculo responsivo y arquitectura modular limpia.',
+          tags: ['Vue', 'Fórmulas', 'Arquitectura modular'],
+        },
+        {
+          title: 'Inventra',
+          description: 'Plataforma SaaS multi-empresa para inventario, ventas y analítica en tiempo real.',
+          tags: ['SaaS', 'Inventario', 'Analítica'],
+        },
       ],
     },
     languages: {
@@ -153,7 +163,6 @@ export const translations = {
     },
     footer: {
       rights: 'Todos los derechos reservados',
-      botNote: 'El asistente virtual no está disponible temporalmente',
       github: 'Ver Código en GitHub',
     },
   },
@@ -271,6 +280,16 @@ export const translations = {
           description: 'Kotlin application built with Jetpack Compose that consumes a custom API hosted on a server to display a jokes database.',
           tags: ['Kotlin', 'Jetpack Compose', 'REST API'],
         },
+        {
+          title: 'Spreadsheet-vue',
+          description: 'Modern spreadsheet application for the browser, focused on deterministic formula evaluation, responsive recalculation, and clean modular architecture.',
+          tags: ['Vue', 'Formulas', 'Modular architecture'],
+        },
+        {
+          title: 'Inventra',
+          description: 'Multi-tenant SaaS platform for inventory, sales, and real-time analytics.',
+          tags: ['SaaS', 'Inventory', 'Analytics'],
+        },
       ],
     },
     languages: {
@@ -311,7 +330,6 @@ export const translations = {
     },
     footer: {
       rights: 'All rights reserved',
-      botNote: 'The virtual assistant is temporarily unavailable',
       github: 'View Code on GitHub',
     },
   },

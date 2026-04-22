@@ -11,7 +11,6 @@ También incluye elementos interactivos como:
 - Animaciones con `framer-motion`
 - Metadatos dinámicos con `react-helmet`
 - Notificaciones con `Toaster`
-- Chat integrado mediante `@n8n/chat`
 - Analítica con `@vercel/analytics`
 
 ## Tecnologías utilizadas
@@ -39,7 +38,6 @@ La aplicación está organizada en componentes reutilizables, cargados desde `sr
 - `OtherData`
 - `Contact`
 - `Footer`
-- `ChatWidget`
 - `Toaster`
 
 ## Características
@@ -85,7 +83,7 @@ npm run preview
 
 ## Configuración
 
-Asegúrate de tener un archivo `.env` si el proyecto lo requiere para variables de entorno relacionadas con chat, analítica u otros servicios externos.
+Asegúrate de tener un archivo `.env` si el proyecto lo requiere para variables de entorno de analítica u otros servicios externos.
 
 ## Despliegue
 

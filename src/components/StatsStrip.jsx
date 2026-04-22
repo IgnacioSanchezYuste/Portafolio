@@ -30,7 +30,7 @@ const StatsStrip = () => {
   const [ref, inView] = useInView(0.25);
 
   const stats = [
-    { value: 4, suffix: '+', label: t.stats.projects, icon: Rocket, color: 'from-emerald-400 to-teal-400' },
+    { value: 6, suffix: '+', label: t.stats.projects, icon: Rocket, color: 'from-emerald-400 to-teal-400' },
     { value: 12, suffix: '+', label: t.stats.languages, icon: Code2, color: 'from-blue-400 to-cyan-400' },
     { value: 500, suffix: 'h', label: t.stats.hours, icon: Clock, color: 'from-purple-400 to-pink-400' },
     { value: 1, suffix: '', label: t.stats.awards, icon: Trophy, color: 'from-amber-400 to-orange-400' },

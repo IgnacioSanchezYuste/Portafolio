@@ -12,7 +12,6 @@ const Footer = () => {
       <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4 max-w-6xl">
         <p className="text-purple-300/80 text-sm text-center sm:text-left">
           © {new Date().getFullYear()} Ignacio Sánchez Yuste. {t.footer.rights}.
-          <span className="block sm:inline sm:ml-1 text-purple-300/50 text-xs">({t.footer.botNote})</span>
         </p>
         <Button
           onClick={() => window.open(githubUrl, '_blank', 'noopener,noreferrer')}

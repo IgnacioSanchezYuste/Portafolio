@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rocket, ExternalLink, Gamepad2, Trophy, ScanLine, Laugh } from 'lucide-react';
+import { Rocket, ExternalLink, Gamepad2, Trophy, ScanLine, Laugh, Table2, Boxes } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 import { useTilt } from '../hooks/useTilt';
 import { useLanguage } from '../context/LanguageContext';
@@ -24,6 +24,16 @@ const projectsMeta = [
     url: 'https://github.com/IgnacioSanchezYuste/ChistesJPA',
     icon: Laugh,
     gradient: 'from-pink-500 to-rose-500',
+  },
+  {
+    url: 'https://ignaciosanchezyuste.es/spreadsheet-vue/',
+    icon: Table2,
+    gradient: 'from-indigo-500 to-violet-500',
+  },
+  {
+    url: 'https://ignaciosanchezyuste.es/Inventra',
+    icon: Boxes,
+    gradient: 'from-lime-500 to-emerald-500',
   },
 ];
 

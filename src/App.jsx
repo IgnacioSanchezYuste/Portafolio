@@ -15,7 +15,6 @@ import StatsStrip from './components/StatsStrip';
 import AuroraBackground from './components/ui/AuroraBackground';
 import ScrollProgress from './components/ui/ScrollProgress';
 import { Toaster } from './components/ui/toaster';
-import ChatWidgetWrapper from './components/ChatWidget';
 import { useLanguage } from './context/LanguageContext';
 
 function App() {
@@ -69,7 +68,6 @@ function App() {
         </div>
         <Footer />
         <Toaster />
-        <ChatWidgetWrapper />
       </div>
     </>
   );
