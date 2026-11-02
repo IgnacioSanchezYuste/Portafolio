@@ -16,7 +16,24 @@ module.exports = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Geist', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				mono: ['"Geist Mono"', 'ui-monospace', 'monospace'],
+				serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+			},
 			colors: {
+				ink: {
+					bg: 'var(--bg)',
+					surface: 'var(--surface)',
+					'surface-2': 'var(--surface-2)',
+					line: 'var(--line)',
+					'line-strong': 'var(--line-strong)',
+					text: 'var(--text)',
+					muted: 'var(--muted)',
+					faint: 'var(--faint)',
+					accent: 'var(--brand)',
+					'accent-ink': 'var(--brand-ink)',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

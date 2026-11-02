@@ -1,59 +1,83 @@
 import React from 'react';
-import { Mail, Phone } from 'lucide-react';
-import { Button } from './ui/button';
+import { ArrowUpRight, Copy } from 'lucide-react';
+import Section from './ui/Section';
 import { useToast } from './ui/use-toast';
-import { useInView } from '../hooks/useInView';
 import { useLanguage } from '../context/LanguageContext';
+
+const email = 'ignaciosanchezyuste@gmail.com';
 
 const Contact = () => {
   const { toast } = useToast();
-  const [ref, inView] = useInView();
   const { t } = useLanguage();
 
   const copyAndToast = (text, description) => {
     navigator.clipboard.writeText(text).catch((err) => console.error('Clipboard error:', err));
-    toast({
-      title: t.contact.copied,
-      description,
-      duration: 4000,
-    });
+    toast({ title: t.contact.copied, description, duration: 3000 });
   };
 
+  const rows = [
+    { label: t.contact.phone, value: '626 050 258', copy: '626050258', copied: t.contact.copiedPhone },
+    { label: 'LinkedIn', value: 'ignacio-sánchez-yuste', url: 'https://www.linkedin.com/in/ignacio-s%C3%A1nchez-yuste-646661384/' },
+    { label: 'GitHub', value: 'IgnacioSanchezYuste', url: 'https://github.com/IgnacioSanchezYuste' },
+    { label: 'X', value: '@IgnacioSanchezY', url: 'https://x.com/IgnacioSanchezY' },
+  ];
+
   return (
-    <div ref={ref} className={`relative reveal-up${inView ? ' in-view' : ''}`}>
-      <div className="section-card bg-gradient-to-br from-violet-800/20 via-purple-800/15 to-transparent backdrop-blur-md p-8 md:p-12 border border-white/10 shadow-2xl">
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-violet-300 via-purple-300 to-pink-300 bg-clip-text text-transparent mb-4 animate-gradient">
-            {t.contact.title}
-          </h2>
-          <p className="text-lg text-violet-200">{t.contact.subtitle}</p>
-        </div>
+    <Section id="contact" index="08" label={t.contact.title}>
+      <h2 className="text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-ink-text md:text-6xl">
+        {t.contact.heading}
+      </h2>
+      <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">{t.contact.subtitle}</p>
 
-        <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-          <Button
-            onClick={() => copyAndToast('ignaciosanchezyuste@gmail.com', t.contact.copiedEmail)}
-            className="w-full h-auto p-6 bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 border-0 rounded-xl flex flex-col items-center gap-3 text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] transition-all"
-          >
-            <Mail className="w-8 h-8" />
-            <div className="text-center">
-              <div className="font-semibold">{t.contact.email}</div>
-              <div className="text-xs opacity-90">ignaciosanchezyuste@gmail.com</div>
-            </div>
-          </Button>
-
-          <Button
-            onClick={() => copyAndToast('626050258', t.contact.copiedPhone)}
-            className="w-full h-auto p-6 bg-gradient-to-br from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 border-0 rounded-xl flex flex-col items-center gap-3 text-white shadow-lg shadow-green-500/30 hover:shadow-green-500/50 hover:scale-[1.02] transition-all"
-          >
-            <Phone className="w-8 h-8" />
-            <div className="text-center">
-              <div className="font-semibold">{t.contact.phone}</div>
-              <div className="text-xs opacity-90">626 050 258</div>
-            </div>
-          </Button>
-        </div>
+      <div className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-3">
+        <a
+          href={`mailto:${email}`}
+          className="link-underline break-all font-serif text-3xl italic text-ink-accent md:text-5xl"
+        >
+          {email}
+        </a>
+        <button
+          onClick={() => copyAndToast(email, t.contact.copiedEmail)}
+          className="inline-flex h-9 items-center gap-2 rounded-full border border-ink-line px-4 font-mono text-xs uppercase tracking-[0.14em] text-ink-muted transition-colors hover:border-ink-line-strong hover:text-ink-text"
+        >
+          <Copy className="h-3.5 w-3.5" />
+          {t.contact.copy}
+        </button>
       </div>
-    </div>
+
+      <ul className="mt-14 border-b border-ink-line">
+        {rows.map((row) => {
+          const inner = (
+            <>
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">{row.label}</span>
+              <span className="flex items-center gap-2 text-ink-text">
+                {row.value}
+                {row.url ? (
+                  <ArrowUpRight className="h-4 w-4 text-ink-faint transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink-accent" />
+                ) : (
+                  <Copy className="h-3.5 w-3.5 text-ink-faint transition-colors group-hover:text-ink-accent" />
+                )}
+              </span>
+            </>
+          );
+          const cls =
+            'group flex w-full items-center justify-between gap-4 border-t border-ink-line py-5 text-left transition-colors hover:bg-ink-surface sm:px-2';
+          return (
+            <li key={row.label}>
+              {row.url ? (
+                <a href={row.url} target="_blank" rel="noopener noreferrer" className={cls}>
+                  {inner}
+                </a>
+              ) : (
+                <button onClick={() => copyAndToast(row.copy, row.copied)} className={cls}>
+                  {inner}
+                </button>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </Section>
   );
 };
 

@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react()],
+  // Use relative asset paths in production so deployments in subfolders work.
+  base: command === 'build' ? './' : '/',
   build: {
     minify: 'terser',
     terserOptions: {
@@ -18,4 +20,4 @@ export default defineConfig({
       },
     },
   },
-})
+}))

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Languages } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 
 const LanguageToggle = ({ className = '' }) => {
@@ -9,12 +8,11 @@ const LanguageToggle = ({ className = '' }) => {
     <button
       onClick={toggle}
       aria-label={lang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
-      className={`group relative flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/15 hover:bg-white/10 hover:border-purple-300/40 text-white text-sm font-medium transition-all backdrop-blur-sm ${className}`}
+      className={`flex h-8 items-center gap-1.5 rounded-full border border-ink-line px-3 font-mono text-xs transition-colors hover:border-ink-line-strong ${className}`}
     >
-      <Languages className="w-4 h-4 text-purple-300 group-hover:rotate-[20deg] transition-transform" />
-      <span className={`transition-colors ${lang === 'es' ? 'text-white font-bold' : 'text-white/40'}`}>ES</span>
-      <span className="text-white/30 text-xs">/</span>
-      <span className={`transition-colors ${lang === 'en' ? 'text-white font-bold' : 'text-white/40'}`}>EN</span>
+      <span className={lang === 'es' ? 'text-ink-text' : 'text-ink-faint'}>ES</span>
+      <span className="text-ink-faint">/</span>
+      <span className={lang === 'en' ? 'text-ink-text' : 'text-ink-faint'}>EN</span>
     </button>
   );
 };
