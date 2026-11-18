@@ -1,1 +1,11 @@
 node_modules
+
+# Build output
+dist/
+dist.zip
+.ssr/
+
+# Env
+.env
+.env.*
+!.env.example

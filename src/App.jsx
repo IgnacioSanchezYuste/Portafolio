@@ -19,13 +19,13 @@ function App() {
   useEffect(() => {
     document.title =
       lang === 'es'
-        ? 'Ignacio Sánchez Yuste — Desarrollador FullStack'
-        : 'Ignacio Sánchez Yuste — FullStack Developer';
+        ? 'Ignacio Sánchez Yuste — Desarrollador Full-Stack'
+        : 'Ignacio Sánchez Yuste — Full-Stack Developer';
 
     const description =
       lang === 'es'
-        ? 'Portfolio de Ignacio Sánchez Yuste, desarrollador FullStack y co-fundador de Hyperfocus. Desarrollador de la web oficial de La Velada del Año VI. Apps, APIs, IA y automatización.'
-        : 'Portfolio of Ignacio Sánchez Yuste, FullStack developer and co-founder of Hyperfocus. Developer of the official La Velada del Año VI website. Apps, APIs, AI and automation.';
+        ? 'Portfolio de Ignacio Sánchez Yuste, desarrollador Full-Stack y co-fundador de Hyperfocus. Desarrollador de la web oficial de La Velada del Año VI. Apps, APIs, IA y automatización.'
+        : 'Portfolio of Ignacio Sánchez Yuste, Full-Stack developer and co-founder of Hyperfocus. Developer of the official La Velada del Año VI website. Apps, APIs, AI and automation.';
 
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {

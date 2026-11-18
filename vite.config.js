@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig(({ command }) => ({
+export default defineConfig(({ command, isSsrBuild }) => ({
   plugins: [react()],
   // Use relative asset paths in production so deployments in subfolders work.
   base: command === 'build' ? './' : '/',
@@ -11,7 +11,7 @@ export default defineConfig(({ command }) => ({
       compress: { drop_console: true, drop_debugger: true },
     },
     rollupOptions: {
-      output: {
+      output: isSsrBuild ? {} : {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
           'lucide': ['lucide-react'],

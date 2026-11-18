@@ -30,6 +30,40 @@
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
   --radius: 0.5rem;
+  --nav-bg: rgba(13, 13, 14, 0.82);
+  --glow: rgba(255, 106, 61, 0.10);
+  color-scheme: dark;
+}
+
+html.light {
+  --bg: #f7f6f3;
+  --surface: #efede8;
+  --surface-2: #e7e4de;
+  --line: #dedbd4;
+  --line-strong: #c4c0b7;
+  --text: #161514;
+  --muted: #5e5c58;
+  --faint: #8d8a84;
+  --brand: #e5522a;
+  --brand-ink: #fff7f3;
+  --nav-bg: rgba(247, 246, 243, 0.85);
+  --glow: rgba(229, 82, 42, 0.10);
+
+  --background: 40 18% 96%;
+  --foreground: 30 4% 8%;
+  --border: 40 10% 85%;
+  --input: 40 10% 85%;
+  --secondary: 40 12% 92%;
+  --secondary-foreground: 30 4% 8%;
+  --muted-foreground: 35 3% 36%;
+  --accent: 40 12% 91%;
+  --accent-foreground: 30 4% 8%;
+  --primary-foreground: 20 100% 98%;
+  color-scheme: light;
+}
+
+html.theme-transition, html.theme-transition * {
+  transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease !important;
 }
 
 * {
@@ -146,11 +180,48 @@ section[id] {
 .media-placeholder {
   background-color: var(--surface);
   background-image:
+    radial-gradient(60% 70% at 30% 20%, var(--glow), transparent 70%),
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 28px 28px;
-  background-position: -1px -1px;
+  background-size: 100% 100%, 28px 28px, 28px 28px;
+  background-position: 0 0, -1px -1px, -1px -1px;
 }
+
+/* Cursor spotlight on cards (--mx/--my set from JS) */
+.spotlight { position: relative; isolation: isolate; }
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), var(--glow), transparent 60%);
+}
+.spotlight:hover::before { opacity: 1; }
+
+/* Brand tile that stays dark in both themes */
+.dark-tile {
+  --surface: #111113;
+  --line: #232326;
+  --text: #ededec;
+  --faint: #616166;
+  --glow: rgba(79, 214, 255, 0.12);
+}
+
+/* Generated project cover */
+.cover-orb {
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(56px);
+  opacity: 0.75;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .cover-orb { transform: translate(8%, -6%) scale(1.1); }
+
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

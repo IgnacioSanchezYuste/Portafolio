@@ -2,6 +2,13 @@ import React from 'react';
 import Section from './ui/Section';
 import { useLanguage } from '../context/LanguageContext';
 
+const logos = {
+  'M2M Aplicaciones': { src: '/img/brands/m2m.webp', bg: '#ffffff' },
+  Hyperfocus: { src: '/img/brands/hyperfocus.svg', bg: '#0d0d0e' },
+  'Kanzan Tech': { src: '/img/brands/kanzan.webp', bg: '#ffffff' },
+  'Synergie España · InfoJobs × midudev': { src: '/img/brands/midudev.webp', bg: '#ffffff' },
+};
+
 export const Timeline = ({ items, currentLabel, renderBody }) => (
   <ol className="border-b border-ink-line">
     {items.map((item, i) => {
@@ -22,7 +29,17 @@ export const Timeline = ({ items, currentLabel, renderBody }) => (
                 </span>
               )}
             </div>
-            <p className="mt-0.5 text-ink-muted">{item.company || item.institution}</p>
+            <p className="mt-1 flex items-center gap-2.5 text-ink-muted">
+              {logos[item.company] && (
+                <span
+                  className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded-md border border-ink-line"
+                  style={{ background: logos[item.company].bg }}
+                >
+                  <img src={logos[item.company].src} alt="" className="h-4 w-4 object-contain" loading="lazy" />
+                </span>
+              )}
+              {item.company || item.institution}
+            </p>
             {renderBody && renderBody(item)}
           </div>
         </li>

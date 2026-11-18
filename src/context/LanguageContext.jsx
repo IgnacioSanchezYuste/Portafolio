@@ -5,17 +5,26 @@ const LanguageContext = createContext(null);
 
 const getInitialLang = () => {
   if (typeof window === 'undefined') return 'es';
-  const saved = localStorage.getItem('lang');
-  if (saved === 'en' || saved === 'es') return saved;
+  try {
+    const saved = localStorage.getItem('lang');
+    if (saved === 'en' || saved === 'es') return saved;
+  } catch (e) {
+    /* storage unavailable */
+  }
   const browser = navigator.language?.slice(0, 2).toLowerCase();
-  return browser === 'en' ? 'en' : 'es';
+  // Spanish only for Spanish browsers; everyone else gets English.
+  return browser === 'es' ? 'es' : 'en';
 };
 
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState(getInitialLang);
 
   useEffect(() => {
-    localStorage.setItem('lang', lang);
+    try {
+      localStorage.setItem('lang', lang);
+    } catch (e) {
+      /* storage unavailable */
+    }
     document.documentElement.lang = lang;
   }, [lang]);
 

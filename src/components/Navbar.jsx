@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import LanguageToggle from './ui/LanguageToggle';
+import ThemeToggle from './ui/ThemeToggle';
 import { container } from './ui/Section';
 
 const Navbar = () => {
@@ -32,7 +33,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
-        scrolled ? 'border-ink-line bg-[rgba(13,13,14,0.82)] backdrop-blur-md' : 'border-transparent'
+        scrolled ? 'border-ink-line bg-[var(--nav-bg)] backdrop-blur-md' : 'border-transparent'
       }`}
     >
       <div className={`${container} flex h-16 items-center justify-between gap-6`}>
@@ -58,7 +59,10 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <LanguageToggle />
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <LanguageToggle />
+        </div>
       </div>
     </header>
   );

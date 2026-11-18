@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ignaciosanchezyuste.es/sitemap.xml

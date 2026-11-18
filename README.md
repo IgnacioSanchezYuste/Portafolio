@@ -1,105 +1,55 @@
-# Portafolio
+# Ignacio Sánchez Yuste — Portfolio
 
-Portafolio personal de **Ignacio Sánchez Yuste**, desarrollado con **React** y **Vite**, y estilizado con **Tailwind CSS**.  
-Este proyecto presenta una web tipo landing/portfolio con secciones de presentación, formación, experiencia, habilidades, idiomas y contacto.
+Personal site of **Ignacio Sánchez Yuste**, Full-Stack Developer, co-founder of [Hyperfocus](https://hyperfocus.es) and part of the team behind the official [La Velada del Año VI](https://infolavelada.com) website (1M+ visits in a month).
 
-## Vista general
+**Live:** [ignaciosanchezyuste.es](https://ignaciosanchezyuste.es)
 
-La aplicación está pensada como un sitio personal moderno, con diseño responsive, animaciones suaves y una interfaz visual cuidada.  
-También incluye elementos interactivos como:
+![Portfolio screenshot](docs/screenshot.webp)
 
-- Animaciones con `framer-motion`
-- Metadatos dinámicos con `react-helmet`
-- Notificaciones con `Toaster`
-- Analítica con `@vercel/analytics`
+## Features
 
-## Tecnologías utilizadas
+- Spanish / English, English by default when the browser isn't in Spanish
+- Dark and light themes (follows the system, remembers your choice, no flash on load)
+- Prerendered HTML at build time, so search engines and CV parsers read real content
+- Open Graph / Twitter cards, JSON-LD `Person` schema, `sitemap.xml` and `robots.txt`
+- Featured projects written as mini case studies (problem → decisions → result)
+- Live "latest commit" badge from the public GitHub API
+- Animated stats, cursor spotlight on cards, scroll reveals (respects `prefers-reduced-motion`)
+- Optional CV download button (shown only when the PDF exists)
 
-- **React 18**
-- **Vite**
-- **Tailwind CSS**
-- **Framer Motion**
-- **React Helmet**
-- **Lucide React**
-- **Radix UI**
-- **Vercel Analytics**
+## Stack
 
-## Estructura principal
+React 18 · Vite 7 · Tailwind CSS 3 · Radix UI · Lucide icons
 
-La aplicación está organizada en componentes reutilizables, cargados desde `src/App.jsx`:
-
-- `Header`
-- `About`
-- `Education`
-- `Experience`
-- `Skills`
-- `Languages`
-- `SoftSkills`
-- `OtherData`
-- `Contact`
-- `Footer`
-- `Toaster`
-
-## Características
-
-- Diseño moderno con fondo degradado
-- Maquetación responsive
-- Secciones separadas por contenido
-- Scroll suave
-- Efectos visuales tipo glassmorphism
-- Animaciones de entrada
-- Preparado para despliegue como portfolio personal
-
-## Captura / demo
-
-> Puedes añadir aquí una captura del proyecto o el enlace a la web publicada.
-
-**Web publicada:** [https://ignaciosanchezyuste.es](https://ignaciosanchezyuste.es)
-
-## Instalación
+## Getting started
 
 ```bash
-git clone https://github.com/IgnacioSanchezYuste/Portafolio.git
-cd Portafolio
 npm install
+npm run dev      # http://localhost:5173
+npm run build    # client build + SSR prerender into dist/
+npm run preview  # serve dist/
 ```
 
-## Scripts disponibles
+## Project structure
 
-### Ejecutar en desarrollo
-```bash
-npm run dev
+```
+src/
+├─ components/        # Page sections (Header, Highlights, Projects, …) and ui/ primitives
+├─ context/           # Language provider
+├─ hooks/             # useInView, useGithubActivity, spotlight handler
+├─ i18n/translations.js  # All copy, ES + EN
+├─ entry-server.jsx   # Render entry used by the prerender step
+└─ main.jsx           # Client entry
+scripts/prerender.mjs # Injects the rendered HTML into dist/index.html
+public/               # Images, OG image, sitemap, robots, 404
 ```
 
-### Compilar para producción
-```bash
-npm run build
-```
+## Editing content
 
-### Previsualizar la build
-```bash
-npm run preview
-```
+- **Text:** `src/i18n/translations.js` (both languages).
+- **Project screenshots:** drop a `.webp` in `public/img/projects/` and set `image` in `src/components/Projects.jsx`. Projects without one get a generated cover.
+- **CV:** add `public/cv/CV-Ignacio-Sanchez-Yuste-ES.pdf` and `public/cv/CV-Ignacio-Sanchez-Yuste-EN.pdf`; the download buttons appear automatically.
 
-## Configuración
+## Deploy
 
-Asegúrate de tener un archivo `.env` si el proyecto lo requiere para variables de entorno de analítica u otros servicios externos.
-
-## Despliegue
-
-Este proyecto puede desplegarse fácilmente en plataformas como:
-
-- Vercel
-- Netlify
-- GitHub Pages
-
-## Autor
-
-**Ignacio Sánchez Yuste**
-
-- GitHub: [IgnacioSanchezYuste](https://github.com/IgnacioSanchezYuste)
-- Web: [ignaciosanchezyuste.es](https://ignaciosanchezyuste.es)
-
-## Licencia
-
-Este proyecto no incluye una licencia definida.
+`npm run build` and upload the contents of `dist/` to the web root.

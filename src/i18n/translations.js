@@ -1,7 +1,10 @@
 export const translations = {
   es: {
     common: {
-      available: 'Abierto a proyectos freelance',
+      available: 'Abierto a puestos Full-Stack · Remoto / Madrid / UE',
+      cv: 'Descargar CV',
+      localTime: 'en Toledo',
+      lastCommit: 'Último commit público',
       location: 'Toledo, España',
       greeting: 'Hola',
       iAm: 'soy',
@@ -17,7 +20,7 @@ export const translations = {
       contact: 'Contacto',
     },
     header: {
-      role: 'Desarrollador Junior FullStack',
+      role: 'Full-Stack Developer',
       subtitle: 'Co-fundador de Hyperfocus',
       headlineA: 'Construyo software, apps y automatizaciones con IA',
       headlineEm: 'que llegan a millones',
@@ -36,7 +39,7 @@ export const translations = {
     about: {
       title: 'Sobre mí',
       paragraphs: [
-        'Soy desarrollador FullStack y co-fundador de Hyperfocus, un estudio en el que diseñamos y construimos software a medida, agentes de IA y sistemas de automatización para empresas. En paralelo trabajo como desarrollador de aplicaciones en M2M Aplicaciones.',
+        'Soy desarrollador Full-Stack y co-fundador de Hyperfocus, un estudio en el que diseñamos y construimos software a medida, agentes de IA y sistemas de automatización para empresas. En paralelo trabajo como desarrollador de aplicaciones en M2M Aplicaciones.',
         'En 2026 fui uno de los dos programadores seleccionados entre más de 30.000 candidatos para desarrollar la web oficial de La Velada del Año VI junto a midudev: un proyecto open source que superó el millón de visitas en un mes.',
         'Me muevo cómodo entre móvil, web y backend. Aprendo rápido, pienso en el producto antes que en la tecnología y disfruto trabajando en equipo.',
       ],
@@ -48,6 +51,8 @@ export const translations = {
         title: 'La Velada del Año VI',
         subtitle: 'Web oficial del evento de Ibai Llanos · con midudev e InfoJobs',
         description: 'Fui uno de los dos programadores elegidos por InfoJobs entre más de 30.000 candidatos para desarrollar la web oficial de La Velada del Año VI junto a Miguel Ángel Durán (midudev) y un equipo de desarrolladores. Un proyecto de código abierto con enorme visibilidad.',
+        role: 'Mi parte: revisión de PRs, maquetación de la página de pronósticos y backend del sistema de votos.',
+        prs: 'Mis PRs',
         stats: ['+1M visitas en un mes', '+4M page views', 'Código abierto'],
         cta: 'Ver la web',
         repo: 'Ver repositorio',
@@ -89,8 +94,9 @@ export const translations = {
           company: 'M2M Aplicaciones',
           period: 'Jun 2026 – Actualidad · Yuncler (Híbrido)',
           tasks: [
-            'Desarrollo de aplicaciones móviles y software a medida.',
-            'Desarrollo Android y front-end en entornos ágiles.',
+            'Desarrollo y mantenimiento del ERP de Alquiber en .NET (C#).',
+            'Modelado, consultas y optimización de bases de datos SQL.',
+            'Despliegue y mantenimiento de servicios en la nube.',
             'Incorporado a plantilla a jornada completa tras las prácticas.',
           ],
           current: true,
@@ -102,6 +108,7 @@ export const translations = {
           tasks: [
             'Seleccionado entre más de 30.000 candidatos en la oferta "cool job" de InfoJobs.',
             'Desarrollo de la web oficial del evento de Ibai Llanos junto a midudev.',
+            'Revisión de PRs, maquetación de la página de pronósticos y backend del sistema de votos.',
             'Proyecto open source con +1M de visitas y +4M de page views en un mes.',
           ],
           current: false,
@@ -132,6 +139,7 @@ export const translations = {
     },
     skills: {
       title: 'Stack',
+      hint: 'Arrástralas y lánzalas',
       categories: [
         { title: 'Lenguajes', skills: ['TypeScript', 'JavaScript', 'Java', 'Kotlin', 'C#', 'Python', 'PHP', 'SQL', 'HTML5', 'CSS', 'XML', 'JSON'] },
         { title: 'Frameworks', skills: ['React', 'React Native', 'Next.js', 'Vue', 'Jetpack Compose', '.NET', 'Tailwind CSS'] },
@@ -144,24 +152,53 @@ export const translations = {
     projects: {
       title: 'Proyectos',
       view: 'Ver Proyecto',
+      more: 'Otros proyectos',
+      scrollHint: 'Sigue bajando',
+      problem: 'Problema',
+      decisions: 'Decisiones',
+      result: 'Resultado',
       items: [
         {
           title: 'La Velada del Año VI',
+          featured: true,
+          case: {
+            problem: "La web oficial de un evento con picos de tráfico masivos, construida en abierto por decenas de colaboradores a la vez.",
+            decisions: "Revisé PRs de otros colaboradores, maqueté la página de pronósticos y desarrollé el backend de votos, con UI optimista para que votar se sienta instantáneo.",
+            result: "+1M de visitas y +4M de page views en un mes, con mis PRs mergeados en producción.",
+          },
           description: 'Web oficial del evento de boxeo de Ibai Llanos, desarrollada junto a midudev y un equipo de desarrolladores. Open source, +1M de visitas y +4M de page views.',
           tags: ['Open Source', 'TypeScript', 'Alto tráfico'],
         },
         {
           title: 'ChillPocket',
+          featured: true,
+          case: {
+            problem: "Las apps de finanzas suelen ser complejas o feas, y la gente acaba dejándolas.",
+            decisions: "Una sola base de código React Native + Expo para iOS, Android y web; design system propio; los gastos recurrentes se generan sin cron, con INSERT idempotente; un único endpoint agregado para la analítica.",
+            result: "App multiplataforma con login de Google, presupuestos, metas de ahorro y analítica (donut, previsión y heatmap de hábitos).",
+          },
           description: 'App de finanzas personales para iOS, Android y web, diseñada para que controlar tu dinero sea sencillo, bonito y sin estrés. Backend propio en PHP + Slim 4.',
           tags: ['React Native', 'Expo', 'PHP Slim'],
         },
         {
           title: 'HyperNews',
+          featured: true,
+          case: {
+            problem: "Un medio digital que tiene que escalar a cientos de miles de artículos sin perder velocidad ni SEO.",
+            decisions: "Next.js 16 (App Router) combinando SSG, ISR y SSR según la ruta; Postgres detrás de una única capa de datos; imágenes OpenGraph dinámicas en el edge; actualización diaria de noticias protegida por secreto.",
+            result: "Sitemap, RSS y JSON-LD automáticos, búsqueda instantánea y panel de administración propio.",
+          },
           description: 'Medio digital moderno y rápido, preparado para escalar a cientos de miles de artículos y millones de visitas, con SEO de nivel producción y actualización diaria de noticias.',
           tags: ['Next.js', 'PostgreSQL', 'SEO'],
         },
         {
           title: 'Inventra',
+          featured: true,
+          case: {
+            problem: "Las pymes controlan inventario y ventas en hojas de cálculo que no escalan ni dan visibilidad.",
+            decisions: "SaaS multiempresa con datos aislados por empresa, JWT con roles (admin, manager y user) y descuento de stock atómico en transacción. Frontend en Vue 3 + Pinia y API en PHP Slim + MySQL.",
+            result: "Producto con demo pública: TPV integrado, invitaciones por email y analítica con refresco automático.",
+          },
           description: 'Plataforma SaaS multi-empresa para inventario, ventas y analítica en tiempo real.',
           tags: ['SaaS', 'Inventario', 'Analítica'],
         },
@@ -195,7 +232,7 @@ export const translations = {
     languages: {
       title: 'Idiomas',
       items: [
-        { name: 'Inglés', level: 'Nivel B2 (Trinity ISE)' },
+        { name: 'Inglés', level: 'B2 (Trinity) · preparando C1' },
         { name: 'Español', level: 'Nativo' },
       ],
     },
@@ -224,9 +261,10 @@ export const translations = {
     },
     contact: {
       title: 'Contacto',
-      heading: '¿Tienes un proyecto en mente?',
-      subtitle: 'Abierto a proyectos freelance, colaboraciones y nuevas oportunidades.',
+      heading: '¿Buscas un desarrollador Full-Stack?',
+      subtitle: 'Abierto a puestos Full-Stack · Remoto / Madrid / UE. También a colaboraciones puntuales.',
       copy: 'Copiar',
+      globe: 'Toledo, ES · Remoto / Madrid / UE',
       email: 'Email',
       phone: 'Teléfono',
       linkedin: 'LinkedIn',
@@ -243,7 +281,10 @@ export const translations = {
   },
   en: {
     common: {
-      available: 'Open to freelance projects',
+      available: 'Open to Full-Stack roles · Remote / Madrid / EU',
+      cv: 'Download CV',
+      localTime: 'in Toledo',
+      lastCommit: 'Latest public commit',
       location: 'Toledo, Spain',
       greeting: 'Hi',
       iAm: "I'm",
@@ -259,7 +300,7 @@ export const translations = {
       contact: 'Contact',
     },
     header: {
-      role: 'Junior FullStack Developer',
+      role: 'Full-Stack Developer',
       subtitle: 'Co-founder of Hyperfocus',
       headlineA: 'I build software, apps and AI automations',
       headlineEm: 'that reach millions',
@@ -278,7 +319,7 @@ export const translations = {
     about: {
       title: 'About',
       paragraphs: [
-        "I'm a FullStack developer and co-founder of Hyperfocus, a studio where we design and build custom software, AI agents and automation systems for businesses. I also work as an application developer at M2M Aplicaciones.",
+        "I'm a Full-Stack developer and co-founder of Hyperfocus, a studio where we design and build custom software, AI agents and automation systems for businesses. I also work as an application developer at M2M Aplicaciones.",
         'In 2026 I was one of the two developers selected among more than 30,000 candidates to build the official website of La Velada del Año VI alongside midudev: an open-source project that passed one million visits in a month.',
         "I'm comfortable across mobile, web and backend. I learn fast, think about the product before the technology, and enjoy working in a team.",
       ],
@@ -290,6 +331,8 @@ export const translations = {
         title: 'La Velada del Año VI',
         subtitle: "Official website of Ibai Llanos' event · with midudev & InfoJobs",
         description: 'I was one of the two developers chosen by InfoJobs among more than 30,000 candidates to build the official website of La Velada del Año VI alongside Miguel Ángel Durán (midudev) and a team of developers. An open-source project with huge visibility.',
+        role: 'My part: PR reviews, building the predictions page UI and the voting backend.',
+        prs: 'My PRs',
         stats: ['1M+ visits in a month', '4M+ page views', 'Open source'],
         cta: 'Visit the site',
         repo: 'View repository',
@@ -331,8 +374,9 @@ export const translations = {
           company: 'M2M Aplicaciones',
           period: 'Jun 2026 – Present · Yuncler (Hybrid)',
           tasks: [
-            'Development of mobile applications and custom software.',
-            'Android and front-end development in agile environments.',
+            "Development and maintenance of Alquiber's ERP in .NET (C#).",
+            'SQL database modelling, querying and optimization.',
+            'Deployment and maintenance of cloud services.',
             'Hired full-time after completing my internship.',
           ],
           current: true,
@@ -344,6 +388,7 @@ export const translations = {
           tasks: [
             'Selected among 30,000+ candidates for the InfoJobs "cool job" offer.',
             "Built the official website of Ibai Llanos' event alongside midudev.",
+            'PR reviews, predictions page UI and the voting system backend.',
             'Open-source project with 1M+ visits and 4M+ page views in one month.',
           ],
           current: false,
@@ -374,6 +419,7 @@ export const translations = {
     },
     skills: {
       title: 'Stack',
+      hint: 'Drag and throw them',
       categories: [
         { title: 'Languages', skills: ['TypeScript', 'JavaScript', 'Java', 'Kotlin', 'C#', 'Python', 'PHP', 'SQL', 'HTML5', 'CSS', 'XML', 'JSON'] },
         { title: 'Frameworks', skills: ['React', 'React Native', 'Next.js', 'Vue', 'Jetpack Compose', '.NET', 'Tailwind CSS'] },
@@ -386,24 +432,53 @@ export const translations = {
     projects: {
       title: 'Projects',
       view: 'View Project',
+      more: 'More projects',
+      scrollHint: 'Keep scrolling',
+      problem: 'Problem',
+      decisions: 'Decisions',
+      result: 'Result',
       items: [
         {
           title: 'La Velada del Año VI',
+          featured: true,
+          case: {
+            problem: "The official site of an event with massive traffic spikes, built in the open by dozens of contributors at once.",
+            decisions: "I reviewed other contributors' PRs, built the predictions page UI and the voting backend, with optimistic UI so voting feels instant.",
+            result: "1M+ visits and 4M+ page views in a month, with my PRs merged into production.",
+          },
           description: "Official website of Ibai Llanos' boxing event, built with midudev and a team of developers. Open source, 1M+ visits and 4M+ page views.",
           tags: ['Open Source', 'TypeScript', 'High traffic'],
         },
         {
           title: 'ChillPocket',
+          featured: true,
+          case: {
+            problem: "Finance apps tend to be complex or ugly, and people end up abandoning them.",
+            decisions: "One React Native + Expo codebase for iOS, Android and web; a custom design system; recurring transactions generated without cron via idempotent INSERTs; a single aggregated analytics endpoint.",
+            result: "Cross-platform app with Google sign-in, budgets, savings goals and analytics (donut, forecast and spending-habit heatmap).",
+          },
           description: 'Personal finance app for iOS, Android and web, designed to make managing your money simple, beautiful and stress-free. Custom PHP + Slim 4 backend.',
           tags: ['React Native', 'Expo', 'PHP Slim'],
         },
         {
           title: 'HyperNews',
+          featured: true,
+          case: {
+            problem: "A digital outlet that must scale to hundreds of thousands of articles without losing speed or SEO.",
+            decisions: "Next.js 16 (App Router) mixing SSG, ISR and SSR per route; Postgres behind a single data-access layer; dynamic OpenGraph images at the edge; a secret-protected daily news job.",
+            result: "Automatic sitemap, RSS and JSON-LD, instant search and a custom admin panel.",
+          },
           description: 'Modern, fast digital news outlet built to scale to hundreds of thousands of articles and millions of visits, with production-grade SEO and daily news updates.',
           tags: ['Next.js', 'PostgreSQL', 'SEO'],
         },
         {
           title: 'Inventra',
+          featured: true,
+          case: {
+            problem: "SMBs track inventory and sales in spreadsheets that don't scale or give visibility.",
+            decisions: "Multi-tenant SaaS with per-company data isolation, JWT with roles (admin, manager and user) and atomic stock updates inside transactions. Vue 3 + Pinia frontend, PHP Slim + MySQL API.",
+            result: "Product with a public demo: built-in POS, email invitations and auto-refreshing analytics.",
+          },
           description: 'Multi-tenant SaaS platform for inventory, sales, and real-time analytics.',
           tags: ['SaaS', 'Inventory', 'Analytics'],
         },
@@ -437,7 +512,7 @@ export const translations = {
     languages: {
       title: 'Languages',
       items: [
-        { name: 'English', level: 'B2 Level (Trinity ISE)' },
+        { name: 'English', level: 'B2 (Trinity) · preparing C1' },
         { name: 'Spanish', level: 'Native' },
       ],
     },
@@ -466,9 +541,10 @@ export const translations = {
     },
     contact: {
       title: 'Contact',
-      heading: 'Have a project in mind?',
-      subtitle: 'Open to freelance projects, collaborations and new opportunities.',
+      heading: 'Looking for a Full-Stack developer?',
+      subtitle: 'Open to Full-Stack roles · Remote / Madrid / EU. Also open to one-off collaborations.',
       copy: 'Copy',
+      globe: 'Toledo, ES · Remote / Madrid / EU',
       email: 'Email',
       phone: 'Phone',
       linkedin: 'LinkedIn',
